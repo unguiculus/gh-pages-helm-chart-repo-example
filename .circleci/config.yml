@@ -1,0 +1,13 @@
+version: 2.0
+
+jobs:
+  no-op: {}
+
+workflows:
+  version: 2
+  no-op:
+    jobs:
+      - no-op:
+          filters:
+            branches:
+              ignore: gh-pages
