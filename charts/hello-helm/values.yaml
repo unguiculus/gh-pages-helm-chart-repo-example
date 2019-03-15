@@ -1,0 +1,10 @@
+image:
+  repository: unguiculus/hello-helm
+  tag: latest
+
+nameOverride: hello-helm
+fullnameOverride: hello-helm
+
+service:
+  type: ClusterIP
+  port: 8080
