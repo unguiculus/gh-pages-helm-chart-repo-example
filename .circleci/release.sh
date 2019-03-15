@@ -69,11 +69,11 @@ package_chart() {
 }
 
 release_charts() {
-    chart-releaser upload -o unguiculus -r helm-charts -p .deploy
+    chart-releaser upload -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy
 }
 
 update_index() {
-    chart-releaser index -o unguiculus -r helm-charts -p .deploy/index.yaml
+    chart-releaser index -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy/index.yaml
 
     git config user.email "$GIT_EMAIL"
     git config user.name "$GIT_USERNAME"
