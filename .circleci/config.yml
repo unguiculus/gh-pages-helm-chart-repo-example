@@ -1,16 +1,5 @@
 version: 2.0
 jobs:
-  lint-scripts:
-    docker:
-      - image: koalaman/shellcheck-alpine
-    steps:
-      - checkout
-      - run:
-          command: |
-            shellcheck -x .circleci/install_charts.sh
-            shellcheck -x .circleci/install_tools.sh
-            shellcheck -x .circleci/release.sh
-
   lint-charts:
     docker:
       - image: quay.io/helmpack/chart-testing:v2.2.0
@@ -41,7 +30,6 @@ workflows:
   version: 2
   lint-and-test:
     jobs:
-      - lint-scripts
       - lint-charts:
           filters:
             branches:
