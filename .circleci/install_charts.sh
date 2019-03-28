@@ -38,7 +38,7 @@ create_kind_cluster() {
     chmod +x kind
     sudo mv kind /usr/local/bin/kind
 
-    kind create cluster --name "$CLUSTER_NAME" --config .circleci/kind-config.yaml --image "kindest/node:$K8S_VERSION"
+    kind create cluster --name "$CLUSTER_NAME" --config .circleci/kind-config.yaml --image "kindest/node:$K8S_VERSION" --wait 5m
 
     docker_exec mkdir -p /root/.kube
 
@@ -48,15 +48,6 @@ create_kind_cluster() {
     docker cp "$kubeconfig" ct:/root/.kube/config
 
     docker_exec kubectl cluster-info
-    echo
-
-    echo -n 'Waiting for cluster to be ready...'
-    until ! grep --quiet 'NotReady' <(docker_exec kubectl get nodes --no-headers); do
-        printf '.'
-        sleep 1
-    done
-
-    echo '✔︎'
     echo
 
     docker_exec kubectl get nodes
