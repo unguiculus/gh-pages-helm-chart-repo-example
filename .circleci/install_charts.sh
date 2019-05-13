@@ -4,8 +4,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly CT_VERSION=v2.2.0
-readonly KIND_VERSION=0.2.0
+readonly CT_VERSION=v2.3.0
+readonly KIND_VERSION=0.2.1
 readonly CLUSTER_NAME=chart-testing
 readonly K8S_VERSION=v1.14.0
 
@@ -38,7 +38,7 @@ create_kind_cluster() {
     chmod +x kind
     sudo mv kind /usr/local/bin/kind
 
-    kind create cluster --name "$CLUSTER_NAME" --config .circleci/kind-config.yaml --image "kindest/node:$K8S_VERSION" --wait 5m
+    kind create cluster --name "$CLUSTER_NAME" --config .circleci/kind-config.yaml --image "kindest/node:$K8S_VERSION" --wait 60s
 
     docker_exec mkdir -p /root/.kube
 
@@ -52,9 +52,11 @@ create_kind_cluster() {
 
     docker_exec kubectl get nodes
     echo
+}
 
-    echo 'Cluster ready!'
-    echo
+install_local_path_provisioner() {
+    docker_exec kubectl delete storageclass standard
+    docker_exec kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml
 }
 
 install_tiller() {
@@ -75,6 +77,7 @@ main() {
     trap cleanup EXIT
 
     create_kind_cluster
+    install_local_path_provisioner
     install_tiller
     install_charts
 }

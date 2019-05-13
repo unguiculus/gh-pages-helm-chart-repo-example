@@ -58,7 +58,7 @@ main() {
 
 find_latest_tag() {
     if ! git describe --tags --abbrev=0 2> /dev/null; then
-        git rev-list --max-parents=0 HEAD
+        git rev-list --max-parents=0 --first-parent HEAD
     fi
 }
 
@@ -81,7 +81,7 @@ update_index() {
     git checkout gh-pages
     cp --force .deploy/index.yaml index.yaml
     git add index.yaml
-    git commit -m "Update index.yaml"
+    git commit --message="Update index.yaml" --signoff
     git push "$GIT_REPOSITORY_URL" gh-pages
 }
 
