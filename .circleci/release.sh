@@ -4,7 +4,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-: "${CH_TOKEN:?Environment variable CH_TOKEN must be set}"
+: "${CR_TOKEN:?Environment variable CR_TOKEN must be set}"
 : "${GIT_REPOSITORY_URL:?Environment variable GIT_REPO_URL must be set}"
 : "${GIT_USERNAME:?Environment variable GIT_USERNAME must be set}"
 : "${GIT_EMAIL:?Environment variable GIT_EMAIL must be set}"
@@ -69,11 +69,11 @@ package_chart() {
 }
 
 release_charts() {
-    chart-releaser upload -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy
+    cr upload -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy
 }
 
 update_index() {
-    chart-releaser index -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy/index.yaml
+    cr index -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy/index.yaml
 
     git config user.email "$GIT_EMAIL"
     git config user.name "$GIT_USERNAME"
