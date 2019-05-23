@@ -36,6 +36,9 @@ main() {
     rm -rf .cr-release-packages
     mkdir -p .cr-release-packages
 
+    rm -rf .cr-index
+    mkdir -p .cr-index
+
     echo "Identifying changed charts since tag '$latest_tag'..."
 
     local changed_charts=()
