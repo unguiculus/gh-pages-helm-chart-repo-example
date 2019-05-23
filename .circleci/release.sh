@@ -33,8 +33,8 @@ main() {
         exit
     fi
 
-    rm -rf .deploy
-    mkdir -p .deploy
+    rm -rf .cr-release-packages
+    mkdir -p .cr-release-packages
 
     echo "Identifying changed charts since tag '$latest_tag'..."
 
@@ -65,21 +65,21 @@ find_latest_tag() {
 package_chart() {
     local chart="$1"
     helm dependency build "$chart"
-    helm package "$chart" --destination .deploy
+    helm package "$chart" --destination .cr-release-packages
 }
 
 release_charts() {
-    cr upload -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy
+    cr upload -o unguiculus -r gh-pages-helm-chart-repo-example
 }
 
 update_index() {
-    cr index -o unguiculus -r gh-pages-helm-chart-repo-example -p .deploy/index.yaml
+    cr index -o unguiculus -r gh-pages-helm-chart-repo-example
 
     git config user.email "$GIT_EMAIL"
     git config user.name "$GIT_USERNAME"
 
     git checkout gh-pages
-    cp --force .deploy/index.yaml index.yaml
+    cp --force .cr-index/index.yaml index.yaml
     git add index.yaml
     git commit --message="Update index.yaml" --signoff
     git push "$GIT_REPOSITORY_URL" gh-pages
