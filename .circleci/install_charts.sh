@@ -5,7 +5,7 @@ set -o nounset
 set -o pipefail
 
 readonly CT_VERSION=v2.3.3
-readonly KIND_VERSION=0.4.0
+readonly KIND_VERSION=v0.4.0
 readonly CLUSTER_NAME=chart-testing
 readonly K8S_VERSION=v1.15.0
 
