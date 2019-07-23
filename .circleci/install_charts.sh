@@ -76,6 +76,12 @@ main() {
     run_ct_container
     trap cleanup EXIT
 
+    changed=$(docker_exec ct list-changed)
+    if [[ -z "$changed" ]]; then
+        echo 'No chart changes detected.'
+        return
+    fi
+
     create_kind_cluster
     install_local_path_provisioner
     install_tiller
