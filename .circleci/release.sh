@@ -76,7 +76,7 @@ release_charts() {
 }
 
 update_index() {
-    cr index -o unguiculus -r gh-pages-helm-chart-repo-example
+    cr index -o unguiculus -r gh-pages-helm-chart-repo-example -c https://unguiculus.github.io/gh-pages-helm-chart-repo-example
 
     git config user.email "$GIT_EMAIL"
     git config user.name "$GIT_USERNAME"
