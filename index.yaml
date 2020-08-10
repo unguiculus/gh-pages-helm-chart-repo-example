@@ -3,9 +3,9 @@ entries:
   hello-helm:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: "2019-09-11T08:18:38.807472068Z"
+    created: "2020-08-10T23:08:50.84211+02:00"
     description: A sample chart for demonstrating a chart repo hosted on GitHub Pages!
-    digest: 3b0aa3f589d7c04749358ba3ca925f314417b0f6aacf2713bd6314407d177216
+    digest: 3aa4c03d4923b8408c115f7ce50d26391e617aa2bdd117b22d36d064727898eb
     home: https://github.com/unguiculus/gh-pages-helm-chart-repo-example
     maintainers:
     - name: unguiculus
