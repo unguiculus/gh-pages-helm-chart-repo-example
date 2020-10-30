@@ -42,7 +42,7 @@ jobs:
           GPG_PASSPHRASE: "${{ secrets.GPG_PASSPHRASE }}"
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@master
+        uses: unguiculus/chart-releaser-action@feature/composite
         with:
           config: cr.yaml
         env:
