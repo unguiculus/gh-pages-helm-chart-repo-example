@@ -22,14 +22,9 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v1
         with:
-          version: v3.3.4
-
-      - name: Add dependency chart repos
-        run: |
-          helm repo add stable https://kubernetes-charts.storage.googleapis.com/
-          helm repo add incubator https://kubernetes-charts-incubator.storage.googleapis.com/
+          version: v3.4.0
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.0.0
+        uses: helm/chart-releaser-action@master
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
