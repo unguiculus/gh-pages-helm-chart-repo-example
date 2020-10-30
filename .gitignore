@@ -2,3 +2,4 @@
 .vscode
 .cr-*
 .deploy
+/charts/*/charts
