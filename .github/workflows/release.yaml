@@ -41,9 +41,15 @@ jobs:
           GPG_KEYRING_BASE64: "${{ secrets.GPG_KEYRING_BASE64 }}"
           GPG_PASSPHRASE: "${{ secrets.GPG_PASSPHRASE }}"
 
+      - name: Add dependency chart repos
+        run: |
+          helm repo add bitnami https://charts.bitnami.com/bitnami
+
       - name: Run chart-releaser
         uses: unguiculus/chart-releaser-action@feature/composite
         with:
           charts_dir: charts
+          config: cr.yaml
+          version: v1.1.1
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
