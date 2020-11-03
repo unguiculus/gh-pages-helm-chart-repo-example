@@ -3,6 +3,26 @@ entries:
   dependencies-v1:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-11-03T21:58:30.147800219Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.7.17
+    description: Chart to test dependencies
+    digest: eac0855e9c996f9caac84cee8d8bb9bcbd05941230e75d7088633b27698e8106
+    home: https://github.com/helm/charts-repo-actions-demo
+    maintainers:
+    - email: email@example.com
+      name: Name
+    name: dependencies-v1
+    sources:
+    - https://github.com/helm/charts-repo-actions-demo
+    urls:
+    - https://github.com/unguiculus/gh-pages-helm-chart-repo-example/releases/download/dependencies-v1-0.1.9/dependencies-v1-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-11-03T22:17:58.892464+01:00"
     dependencies:
     - condition: redis.enabled
@@ -44,6 +64,26 @@ entries:
   dependencies-v2:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2020-11-03T21:58:30.261325601Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.7.17
+    description: Chart to test dependencies
+    digest: dd0b9753b66e796b7588c7a869a2a73e019ae5625745c9e6268e35e676c737d9
+    home: https://github.com/helm/charts-repo-actions-demo
+    maintainers:
+    - email: email@example.com
+      name: Name
+    name: dependencies-v2
+    sources:
+    - https://github.com/helm/charts-repo-actions-demo
+    urls:
+    - https://github.com/unguiculus/gh-pages-helm-chart-repo-example/releases/download/dependencies-v2-0.1.10/dependencies-v2-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2020-10-30T16:49:00.984487634Z"
     dependencies:
     - condition: redis.enabled
@@ -65,6 +105,21 @@ entries:
   example-v1:
   - apiVersion: v1
     appVersion: "3.9"
+    created: "2020-11-03T21:58:30.345812235Z"
+    description: Deploy a basic Alpine Linux pod
+    digest: 86f508e384d003484824c08e430ab05b33f3be3341a33c4990cf3a737dcb68b8
+    home: https://helm.sh/helm
+    maintainers:
+    - email: email@example.com
+      name: Name
+    name: example-v1
+    sources:
+    - https://github.com/helm/helm
+    urls:
+    - https://github.com/unguiculus/gh-pages-helm-chart-repo-example/releases/download/example-v1-0.1.13/example-v1-0.1.13.tgz
+    version: 0.1.13
+  - apiVersion: v1
+    appVersion: "3.9"
     created: "2020-10-30T16:49:01.190079649Z"
     description: Deploy a basic Alpine Linux pod
     digest: a6bb0b646554d260eccc13fe781f91f2ca1973faefc0ed7ece6b9122d1cb54d5
@@ -79,6 +134,21 @@ entries:
     - https://github.com/unguiculus/gh-pages-helm-chart-repo-example/releases/download/example-v1-0.1.10/example-v1-0.1.10.tgz
     version: 0.1.10
   example-v2:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2020-11-03T21:58:30.45197538Z"
+    description: A Helm chart for Kubernetes
+    digest: 770d2cb4beceba00e9147cbb628cb6dad6b3a829c3dd12c79c56d65712f1ce35
+    home: https://helm.sh/helm
+    maintainers:
+    - email: email@example.com
+      name: Name
+    name: example-v2
+    sources:
+    - https://github.com/helm/helm
+    urls:
+    - https://github.com/unguiculus/gh-pages-helm-chart-repo-example/releases/download/example-v2-0.2.8/example-v2-0.2.8.tgz
+    version: 0.2.8
   - apiVersion: v2
     appVersion: "1.0"
     created: "2020-10-30T16:49:01.296591381Z"
