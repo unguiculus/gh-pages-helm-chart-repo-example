@@ -3,6 +3,26 @@ entries:
   dependencies-v1:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-11-03T22:01:09.47786365Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.7.17
+    description: Chart to test dependencies
+    digest: 9765b58cc1b026f43ec9d8969750ddd1b14a0ad25ed3c0c6ea308f4d2d474216
+    home: https://github.com/helm/charts-repo-actions-demo
+    maintainers:
+    - email: email@example.com
+      name: Name
+    name: dependencies-v1
+    sources:
+    - https://github.com/helm/charts-repo-actions-demo
+    urls:
+    - https://github.com/unguiculus/gh-pages-helm-chart-repo-example/releases/download/dependencies-v1-0.1.10/dependencies-v1-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-11-03T21:58:30.147800219Z"
     dependencies:
     - condition: redis.enabled
