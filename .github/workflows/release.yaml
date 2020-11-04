@@ -46,7 +46,7 @@ jobs:
           helm repo add bitnami https://charts.bitnami.com/bitnami
 
       - name: Run chart-releaser
-        uses: unguiculus/chart-releaser-action@feature/composite
+        uses: helm/chart-releaser-action@master
         with:
           charts_dir: charts
           config: cr.yaml
