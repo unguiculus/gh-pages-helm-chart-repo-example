@@ -165,6 +165,21 @@ entries:
   example-v1:
   - apiVersion: v1
     appVersion: "3.9"
+    created: "2020-11-04T18:10:34.191424566Z"
+    description: Deploy a basic Alpine Linux pod
+    digest: 22059e306660ad0df451fbf7a23180be9ecb0256de90d736eb793a21949d6d30
+    home: https://helm.sh/helm
+    maintainers:
+    - email: email@example.com
+      name: Name
+    name: example-v1
+    sources:
+    - https://github.com/helm/helm
+    urls:
+    - https://github.com/unguiculus/gh-pages-helm-chart-repo-example/releases/download/example-v1-0.1.14/example-v1-0.1.14.tgz
+    version: 0.1.14
+  - apiVersion: v1
+    appVersion: "3.9"
     created: "2020-11-03T21:58:30.345812235Z"
     description: Deploy a basic Alpine Linux pod
     digest: 86f508e384d003484824c08e430ab05b33f3be3341a33c4990cf3a737dcb68b8
